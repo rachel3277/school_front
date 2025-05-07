@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { STORE } from "../../redux/store";
 import "./parent.css";
 
-const buttonClickSound = new Audio('/sounds/button-click.mp3'); // הוספת סאונד
 
 export const Parent = () => {
     const dispatch = useDispatch();
@@ -23,20 +22,15 @@ export const Parent = () => {
         getChildren();
     }, []);
 
-    const handleButtonClick = () => {
-        buttonClickSound.play(); // השמעת סאונד
-    };
-
     return (
         <div id="parent" className="parent-container">
             <h1 className="parent-welcome">😁 שלום וברכה להורים</h1>
             <nav className="parent-nav" onClick={() => setCode(false)}>
-                <button className="nav-button" onClick={() => { handleButtonClick(); navigate('payment'); }}>מעבר לתשלום</button>
-                <button className="nav-button" onClick={() => { handleButtonClick(); navigate('newStudent'); }}>רישום תלמידה חדשה לבית הספר</button>
-                <button className="nav-button" onClick={() => { handleButtonClick(); navigate('schoolLife'); }}>מהווי בית הספר</button>
-                <button className="nav-button" onClick={() => { handleButtonClick(); navigate('calendar'); }}>אירועי החודש</button>
+                <button className="nav-button" onClick={() => {  navigate('payment'); }}>מעבר לתשלום</button>
+                <button className="nav-button" onClick={() => { navigate('newStudent'); }}>רישום תלמידה חדשה לבית הספר</button>
+                <button className="nav-button" onClick={() => {navigate('schoolLife'); }}>מהווי בית הספר</button>
+                <button className="nav-button" onClick={() => { navigate('calendar'); }}>אירועי החודש</button>
                 <button className="nav-button" onClick={() => {
-                    handleButtonClick();
                     if (sonsList.length === 1) {
                         STORE.dispatch(parentsSlice.actions.setCurrentStudent(sonsList[0]));
                         navigate(`/parent/child`);
@@ -46,7 +40,7 @@ export const Parent = () => {
                 }}>הילדים המתוקים שלנו</button>
             </nav>
             <div className="code-section">
-                <button className="code-button" onClick={() => { handleButtonClick(); setCode(true); }}>לצפיה בקוד האישי שלך</button>
+                <button className="code-button" onClick={() => {  setCode(true); }}>לצפיה בקוד האישי שלך</button>
                 {code && <div className="code-display">{parent.id}: הקוד האישי הוא</div>}
             </div>
             <Outlet />

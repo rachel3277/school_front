@@ -1,7 +1,7 @@
 /* צבעי תכלת-ירוק רכים ונעימים, עיצוב נקי עם קווים חלקים */
 
 :root {
-    --primary-light: #a3d8d3; /* תכלת בהיר */
+    --primary-light: #1976d2; /* תכלת בהיר */
     --primary-dark: #4a7c59; /* ירוק כהה */
     --primary-mid: #6fb98f; /* ירוק תכלת */
     --background: #f0f7f4; /* רקע לבן עם נגיעות ירוקות */
@@ -37,7 +37,7 @@
 /* אנימציות fade-in */
 @keyframes fadeInUp {
     0% {
-        opacity: 0;
+        opacity: 30%;
         transform: translateY(20px);
     }
     100% {
@@ -173,8 +173,8 @@
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(74, 124, 89, 0.5);
-    transition: background var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 12px rgba(#1976d2);
+    /* transition: background var(--transition-speed), transform var(--transition-speed); */
     user-select: none;
     position: relative;
     overflow: hidden;

@@ -895,7 +895,7 @@ export const Registration = () => {
                             כבר יש לך חשבון?{' '}
                             <Button
                                 color="primary"
-                                onClick={() => navigate('/login')}
+                                onClick={() => navigate('/')}
                                 sx={{
                                     fontWeight: 'bold',
                                     color: yellow[700],
